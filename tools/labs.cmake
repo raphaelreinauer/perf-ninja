@@ -70,8 +70,8 @@ add_executable(validate validate.cpp ${srcs} ${EXT_VALIDATE_srcs})
 
 # Add path to a local benchmark library
 if(EXISTS "${BENCHMARK_FOLDER}/include")
-  target_include_directories(lab BEFORE PRIVATE "${BENCHMARK_FOLDER}/include")
-  target_include_directories(validate BEFORE PRIVATE "${BENCHMARK_FOLDER}/include")
+  target_include_directories(lab BEFORE PRIVATE "${BENCHMARK_FOLDER}/include" "${BENCHMARK_FOLDER}/build/include")
+  target_include_directories(validate BEFORE PRIVATE "${BENCHMARK_FOLDER}/include" "${BENCHMARK_FOLDER}/build/include")
 endif()
 
 # Check optional arguments
